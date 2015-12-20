@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+</head>
+<body>
+<%- @html %>
+<script>
+  <% for jsFile in @jsFiles : %>
+  document.write(
+    '<' + 'script src="<%- jsFile %>?' + Math.random().toString(16).slice(2) +
+    '"><' + '/script' + '>'
+  )
+  <% end %>
+</script>
+</body>
+</html>

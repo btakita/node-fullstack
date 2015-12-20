@@ -1,0 +1,5 @@
+<script type="text/javascript">
+<% for jsFile in @jsFiles : %>
+  document.write('<scr' + 'ipt type="text/javascript" src="<%- jsFile %>?v=' +  window.NODE_FULLSTACK_VERSION + '"></scr' + 'ipt>');
+<% end %>
+</script>

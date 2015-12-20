@@ -1,0 +1,54 @@
+{
+  "name": "node-fullstack",
+  "version": "0.5.1",
+  "description": "A toolkit to build composable nodejs dom,http,microservice platforms",
+  "author": "Brian Takita <brian.takita@gmail.com>",
+  "contributors": [],
+  "bin": {
+    "http-watch": "./http/http-watch.bin.js",
+    "http-test-watch": "./http/http-test-watch.bin.js",
+    "test": "./test/test.bin.js",
+    "test-watch": "./test/test-watch.bin.js"
+  },
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/btakita/node-fullstack"
+  },
+  "bugs": {
+    "url": "https://github.com/btakita/node-fullstack/issues"
+  },
+  "keywords": [
+    "node-fullstack",
+    "node",
+    "fullstack"
+  ],
+  "dependencies": {
+    "deep-equal": "^1.0.1",
+    "dom-classes": "0.0.1",
+    "ect": "^0.5.9",
+    "file-status": "^0.1.0",
+    "kexec": "^2.0.2",
+    "lodash": "^3.10.1",
+    "mitm": "^1.2.0",
+    "node-dev": "^2.7.1",
+    "node-uuid": "^1.4.7",
+    "nodemailer": "^1.10.0",
+    "nodemailer-smtp-transport": "^1.0.4",
+    "nodemon": "^1.8.1",
+    "sinon": "^1.17.2",
+    "sockjs": "^0.3.15",
+    "sockjs-client": "^1.0.3",
+    "supertest": "^1.1.0",
+    "tap": "^2.3.3",
+    "tap-difflet": "^0.4.0",
+    "tape": "^4.2.2",
+    "tape-catch": "^1.0.4",
+    "wait-for-port": "0.0.1",
+    "xhr2": "^0.1.3",
+    "yargs": "^3.31.0"
+  },
+  "devDependencies": {},
+  "analyze": true,
+  "license": "Apache"
+}

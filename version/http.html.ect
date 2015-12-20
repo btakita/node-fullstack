@@ -1,0 +1,7 @@
+<% if @version : %>
+<script type="text/javascript">
+  window.NODE_FULLSTACK_VERSION="<%= @version %>";
+</script>
+<% else : %>
+<script type="text/javascript" src="/version.js"></script>
+<% end %>
