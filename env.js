@@ -11,6 +11,7 @@ var env = {
   keyCodes: require('./char/keyCodes'),
   rPad: require('./string/rPad'),
   uriParse: require('./urls/uriParse'),
-  xhr: require('xhr2')
+  xhr: require('xhr2'),
+  xhrRequest: require('./xhr/xhr.request')
 };
 module.exports = env;
