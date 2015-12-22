@@ -1,6 +1,6 @@
 {
   "name": "node-fullstack",
-  "version": "0.5.2",
+  "version": "0.5.3",
   "description": "A toolkit to build composable nodejs dom,http,microservice platforms",
   "author": "Brian Takita <brian.takita@gmail.com>",
   "contributors": [],
