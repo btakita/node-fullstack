@@ -1,6 +1,7 @@
 var env = {
   arrayLast: require('./array/last'),
   arrayUnique: require('./array/unique'),
+  assign: require('./assign'),
   callFn: require('./fn/callFn'),
   deepEqual: require('deep-equal'),
   deleteNullAttributes: require('./object/deleteNullAttributes'),
