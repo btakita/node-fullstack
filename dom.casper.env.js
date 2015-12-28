@@ -20,17 +20,19 @@ module.exports = {
   },
   start: function(data, fn) {
     console.info(logPrefix+'|start', testFrontendUrl, JSON.stringify(Object.assign({}, {test: test}, data)));
-    return casper.start().thenOpen(testFrontendUrl, {
-      method: 'POST',
-      encoding: 'utf8',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      data: JSON.stringify(Object.assign({}, {test: test}, data))
-    })
+    var self = casper.start().thenOpen(testFrontendUrl, {
+        method: 'POST',
+        encoding: 'utf8',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        data: JSON.stringify(Object.assign({}, {test: test}, data))
+      })
       .then(setup)
       .then(fn)
       ;
+    if (!self.stop) self.stop = stopFn(self);
+    return self;
   }
 };
 function setup() {
@@ -46,4 +48,14 @@ function tearDown() {
     console.info(logPrefix+'|tearDown|evaluate', window.require);
     require('test.helpers').tearDown();
   }, logPrefix);
+}
+function stopFn(self) {
+  return function(done) {
+    if (!done) throw 'Error in casper stop ('+logPrefix+'). done Function argument required. i.e. `.stop(done)`';
+    var steps = self.steps;
+    self.then(function() {
+      steps.splice(self.step, steps.length);
+    });
+    return self.run(done);
+  }
 }
